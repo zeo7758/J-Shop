@@ -1,12 +1,43 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "pages":[
+        "pages/index/index",
+        "pages/my/my",
+        "pages/shopCar/shopCar",
+        "pages/hangOut/hangOut"
+    ],
+    "window":{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "#1e4e3c",
+        "navigationBarTitleText": "J-Shop",
+        "navigationBarTextStyle":"#fff"
+    },
+    "tabBar": {
+        "selectedColor": "#1e4e3c",
+        "list":[
+            {
+                "pagePath": "pages/index/index",
+                "text":"首页",
+                "iconPath":"./common/image/ico-index1.png",
+                "selectedIconPath":"./common/image/ico-index2.png"
+            },
+            {
+                "pagePath": "pages/hangOut/hangOut",
+                "text":"闲逛",
+                "iconPath":"./common/image/ico-classify1.png",
+                "selectedIconPath":"./common/image/ico-classify2.png"
+            },
+            {
+                "pagePath": "pages/shopCar/shopCar",
+                "text":"购物车",
+                "iconPath":"./common/image/ico-shopcar1.png",
+                "selectedIconPath":"./common/image/ico-shopcar2.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text":"我的",
+                "iconPath":"./common/image/ico-my1.png",
+                "selectedIconPath":"./common/image/ico-my2.png"
+            }
+        ]
+    }
 }
