@@ -4,7 +4,13 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    swiperList:[],
+    activityList:[],
+    recommendList:[],
+    indicatorDots: false,
+    autoplay: false,
+    interval: 5000,
+    duration: 500,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,39 +22,58 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    this.getDataList('banner')
+    this.getActivity()
+    this.getList(1)
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  getList(start) {
+      wx.request({
+          url: 'https://coolbuy.com/api/v1.4/product_recommend/',
+          data:{
+                limit: 10,
+                offset: start
+          },
+          success:(res) => {
+              let list = this.data.recommendList
+             this.setData({
+                recommendList:[...list, ...(res.data && res.data.objects)] || []
+             })
+             console.log(res.data);
+          }
+      })
+  },
+  getActivity() {
+      wx.request({
+          url: 'https://coolbuy.com/api/v1.4/shelf/',
+          data:{
+                limit: 10,
+                img_size: "medium",
+                shelf_type: 'activity',
+          },
+          success:(res) => {
+             this.setData({
+                activityList:(res.data && res.data.objects) || []
+             })
+             // console.log(res.data);
+          }
+      })
+  },
+  getDataList(type,size='medium') {
+      wx.request({
+          url: 'https://coolbuy.com/api/v1.4/campaign_banner/',
+          data:{
+                limit: 10,
+                offset: 0,
+                banner_type: type,
+                img_size: size,
+                platform: 'mobile',
+                order_by: '-priority',
+          },
+          success:(res) => {
+             this.setData({
+                swiperList:(res.data && res.data.objects) || []
+             })
+          }
+      })
   }
 })

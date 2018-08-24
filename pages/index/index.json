@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "inputShow": "../../templates/inputShow/inputShow"
+    }
+}

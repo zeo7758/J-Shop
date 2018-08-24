@@ -1,0 +1,4 @@
+<view class='inputShow'>
+  <view class='icon'></view>
+  <view class='input'></view>
+</view>

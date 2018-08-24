@@ -1,13 +1,38 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <view class='input-wrap'>
+        <inputShow></inputShow>
+    </view>
+    <view class="swiper-wrap">
+        <swiper class='swiper' indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{autoplay}}'>
+            <block wx:for="{{swiperList}}" wx:key='{{index}}'>
+              <swiper-item>
+                <image src="{{item.image}}" class="slide-image" width="355" height="150"/>
+              </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 广告 -->
+    <view class="activ-wrap">
+        <text class='index-tit'>活动推荐</text>
+        <view class='wrap'>
+            <view wx:for='{{activityList}}' wx:key="{{index}}" class="activ">
+                <image mode="widthFix"  src="{{item.cover_image}}"/>
+                <text class="title">{{item.name}}</text>
+                <text class="en-name">{{item.english_name}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 推荐 -->
+    <view class="activ-wrap">
+        <text class='index-tit'>猜你喜欢</text>
+        <view class='good-wrap'>
+            <view wx:for='{{recommendList}}' wx:key="{{index}}" class="good">
+                <image mode="widthFix" src="{{item.cover_image}}"/>
+                <text class="title">{{item.title}}</text>
+                <text class="en-name">{{item.summary}}</text>
+            </view>
+        </view>
+    </view>
 </view>

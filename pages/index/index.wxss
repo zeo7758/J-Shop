@@ -1,21 +1,92 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.swiper-wrap{
+    width: 100%;
+    height: 400rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.swiper{
+    width: 100%;
+    height: 100%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.swiper image{
+    width: 100%;
+    height: 100%;
 }
-
-.usermotto {
-  margin-top: 200px;
+.input-wrap{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 10rpx 5%;
+    height:80rpx;
+    z-index: 10;
+    background: rgba(30,78,60,.5);
+}
+.activ-wrap{
+    padding: 10rpx 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+.wrap{
+    width: 180%;
+}
+.activ{
+    width:300rpx;
+    display: inline-block;
+}
+.activ image{
+    width: 100%;
+    height: 140rpx;
+}
+.activ text{
+    display: block;
+    padding-left: 20rpx;
+    width: 100%;
+}
+.title {
+    color: #000;
+    font-size: 14px;
+    font-weight: 200;
+    margin:6rpx 4;
+}
+.en-name{
+    font-size: 12px;
+    color:#5d5d5d;
+}
+.index-tit{
+    display:block;
+    font-size:16px;
+    font-weight:400;
+    margin-bottom:10rpx;
+    position:relative;
+    padding-left:56rpx;
+    line-height:24px;
+    margin-top: 20rpx;
+}
+.index-tit::after{
+    width: 14rpx;
+    height: 16px;
+    background: #1e4e3c;
+    position: absolute;
+    top: 4px;
+    left: 20rpx;
+    content: ''
+}
+.good-wrap{
+    /* padding:0 20rpx; */
+    width: 100%;
+}
+.good-wrap:after{
+    content: '';
+    overflow: hidden;
+    clear: both;
+    height: 0;
+}
+.good{
+    width: 50%;
+    float: left;
+    /* padding: 20rpx; */
+    /* padding:0 20rpx; */
+}
+.good image{
+    width: 100%;
+    display: block;
+    /* height: auto; */
 }
