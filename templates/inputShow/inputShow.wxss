@@ -1,6 +1,6 @@
 .inputShow{
     width: 100%;
-    background: rgba(0,0,0,.4);
+    background: rgba(255,255,255,.6);
     height: 60rpx;
     border-radius:30rpx;
     /* position: relative; */
@@ -9,8 +9,8 @@
     width: 40rpx;
     height: 40rpx;
     float: left;
-    background:url('../../common/image/search.png') no-repeat;
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     margin: 10rpx 0 0 20rpx;
-    background: red;
+    /* background: red; */
 }

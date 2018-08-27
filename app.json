@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/my/my",
         "pages/shopCar/shopCar",
-        "pages/hangOut/hangOut"
+        "pages/hangOut/hangOut",
+        "pages/login/login"
     ],
     "window":{
         "backgroundTextStyle":"light",

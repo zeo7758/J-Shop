@@ -33,6 +33,18 @@
 					"name": "my",
 					"pathName": "pages/my/my",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shopcar",
+					"pathName": "pages/shopCar/shopCar",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
 				}
 			]
 		}

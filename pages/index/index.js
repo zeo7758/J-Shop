@@ -15,16 +15,34 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
     this.getDataList('banner')
     this.getActivity()
     this.getList(1)
+    wx.setStorage({
+        key:'_ga',
+        data: 'GA1.2.1146950384.1535360138'
+    })
+    wx.setStorage({
+        key:'_gid',
+        data: 'GA1.2.1928098619.1535360138'
+    })
+    wx.setStorage({
+        key:'csrftoken',
+        data: 'vOuNM5Y4NWoYg8rJsOqkkLChaUbjLX60AT5NKc97Va9nkxgS5UdTTlGcHlhuOZfN'
+    })
+    wx.setStorage({
+        key:'tracker_id',
+        data: 'b94a700c3f6dc0c728e610d0b1e12417'
+    })
+    wx.setStorage({
+        key:'uid',
+        data: '67516137'
+    })
+    wx.setStorage({
+        key:'AWSALB',
+        data: '3tTxCUT7fEwYJDbu4KxedHbrkQ/pZicgiHbcTcFcHo3RY1XCXWbS82NIhdLx/4HsKSFs3hPo4vpvJIL5Wu3UhilCJs8Gkr52k8WD+6NgU928yXNys/JJonytllcl'
+    })
   },
   getList(start) {
       wx.request({

@@ -1,6 +1,43 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+    <view class="board">
+        <view class='board-info'>
+            <!-- <view class='check'>
+                <checkbox class='checkboxs'/>
+
+            </view> -->
+            <label class="checkbox">
+                <checkbox />
+                <text>全选</text>
+            </label>
+            <view class="all-pay">
+                <text>合计</text>
+                <text class='cm-theme-clr money'>0元</text>
+            </view>
+        </view>
+        <text class='sale cm-theme-bgc'>结算</text>
+    </view>
+    <!-- 购物车列表 -->
+    <view class='car-list'>
+        <view class='cm-flex-col item-wrap' wx:for='{{list.objects[0].products}}' wx:key='{{index}}' >
+            <view class='clearGood' style='background-image: url(../../common/image/chart_close.png)'></view>
+            <checkbox class='check-item'/>
+            <view class="cm-flex-col good-info">
+                <view class='good-img cm-bgc-img' style="background-image:url({{item.sku_image}})"></view>
+                <view class='good-txt'>
+                    <view class='txt'>
+                        <text class='titles'>{{item.title}}</text>
+                        <text class='spec'>{{item.spec_str}}</text>
+                    </view>
+                    <view class='operate cm-flex-col'>
+                        <text class='cm-theme-clr price-one'>￥{{item.unit_price}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='opte'>
+                <text class='decrease' bindtap='decrease' data-id='{{list.objects[0].id}}' data-quantity='{{item.quantity}}' data-sku_id="{{item.product_sku_id}}">-</text>
+                <text class='num' >{{item.quantity}}</text>
+                <text class='add' bindtap='add' data-id='{{list.objects[0].id}}' data-quantity='{{item.quantity}}' data-sku_id="{{item.product_sku_id}}">+</text>
+            </view>
+        </view>
+    </view>
 </view>

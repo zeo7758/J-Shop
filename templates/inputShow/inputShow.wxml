@@ -1,4 +1,4 @@
 <view class='inputShow'>
-  <view class='icon'></view>
+  <view class='icon' style='background-image:url(../../common/image/search.png)'></view>
   <view class='input'></view>
 </view>

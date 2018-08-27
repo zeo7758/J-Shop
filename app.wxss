@@ -11,3 +11,12 @@ page{
 .cm-theme-bgc{
     background-color: #1e4e3c;
 }
+.cm-flex-col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cm-bgc-img{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
